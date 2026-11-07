@@ -1,0 +1,90 @@
+{
+  "manifest_version": 3,
+  "name": "Google AI Pro 2Y Offer Injector",
+  "version": "2.0.0",
+  "description": "Google One / AI Pro checkout offer token injector.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://one.google.com/*",
+    "https://tokenized.play.google.com/*",
+    "https://play.google.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Google AI Pro Injector",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://one.google.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": false
+    },
+    {
+      "matches": [
+        "https://one.google.com/*"
+      ],
+      "js": [
+        "inject.js"
+      ],
+      "css": [
+        "page-ui.css"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN",
+      "all_frames": false
+    },
+    {
+      "matches": [
+        "https://tokenized.play.google.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true
+    },
+    {
+      "matches": [
+        "https://tokenized.play.google.com/*"
+      ],
+      "js": [
+        "play_guard.js"
+      ],
+      "css": [
+        "page-ui.css"
+      ],
+      "run_at": "document_idle",
+      "world": "MAIN",
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "fonts/geist-latin.woff2"
+      ],
+      "matches": [
+        "https://one.google.com/*",
+        "https://tokenized.play.google.com/*"
+      ]
+    }
+  ]
+}

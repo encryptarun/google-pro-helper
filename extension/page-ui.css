@@ -1,0 +1,175 @@
+@font-face {
+  font-family: "Gapt Geist";
+  src: url("fonts/geist-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+.gapt-notice {
+  all: initial;
+  --gapt-surface: light-dark(oklch(1 0 0), oklch(0.145 0 0));
+  --gapt-text: light-dark(oklch(0.145 0 0), oklch(0.985 0 0));
+  --gapt-border: light-dark(oklch(0.922 0 0), rgb(255 255 255 / 10%));
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 2147483647;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid var(--gapt-border);
+  border-radius: 0;
+  box-shadow: none;
+  background: var(--gapt-surface);
+  color: var(--gapt-text);
+  color-scheme: light dark;
+  font:
+    400 12px/18px "Gapt Geist",
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
+  text-align: start;
+  overflow-wrap: anywhere;
+  -webkit-font-smoothing: antialiased;
+}
+
+:root[data-gapt-theme="light"] .gapt-notice {
+  color-scheme: light;
+}
+:root[data-gapt-theme="dark"] .gapt-notice {
+  color-scheme: dark;
+}
+
+.gapt-notice.gapt-badge {
+  --gapt-edge: light-dark(oklch(0.145 0 0), oklch(0.75 0 0));
+  inset-inline-end: 20px;
+  inset-block-end: 20px;
+  max-inline-size: min(340px, calc(100% - 32px));
+  border-color: var(--gapt-edge);
+  box-shadow: 5px 5px 0 var(--gapt-edge);
+}
+
+.gapt-notice.gapt-badge::after {
+  background: var(--gapt-edge);
+}
+
+.gapt-notice::after {
+  --gapt-cross: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M0 5h10M5 0v10' stroke='black' stroke-width='1'/%3E%3C/svg%3E");
+  content: "";
+  position: absolute;
+  inset: -5.5px;
+  background: currentColor;
+  opacity: 0.65;
+  mask:
+    var(--gapt-cross) left top / 10px 10px no-repeat,
+    var(--gapt-cross) right top / 10px 10px no-repeat,
+    var(--gapt-cross) left bottom / 10px 10px no-repeat,
+    var(--gapt-cross) right bottom / 10px 10px no-repeat;
+  pointer-events: none;
+}
+
+.gapt-notice.gapt-guard {
+  inset-block-start: 12px;
+  inset-inline: 12px;
+}
+
+.gapt-notice > .gapt-notice__icon {
+  all: initial;
+  display: block;
+  flex: 0 0 16px;
+  inline-size: 16px;
+  block-size: 16px;
+  margin-block-start: 1px;
+  fill: none;
+  stroke: currentColor;
+  color: var(--gapt-text);
+  color-scheme: inherit;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.gapt-notice > .gapt-notice__text {
+  all: initial;
+  min-inline-size: 0;
+  font: inherit;
+  color: inherit;
+  color-scheme: inherit;
+  line-height: inherit;
+  overflow-wrap: anywhere;
+}
+
+.gapt-notice > .gapt-notice__icon path {
+  fill: none;
+  stroke: inherit;
+  stroke-width: inherit;
+  stroke-linecap: inherit;
+  stroke-linejoin: inherit;
+}
+
+.gapt-badge > .gapt-notice__text {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 10px;
+}
+
+.gapt-badge__duration {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+.gapt-badge__duration > svg {
+  display: block;
+  inline-size: 14px;
+  block-size: 14px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.gapt-badge__renewal {
+  flex-basis: 100%;
+}
+
+.gapt-badge__duration[hidden],
+.gapt-badge__renewal[hidden] {
+  display: none;
+}
+
+.gapt-badge[data-kind="idle"] .gapt-badge__check {
+  display: none;
+}
+
+.gapt-badge .gapt-badge__check {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .gapt-badge[data-kind="ok"] > .gapt-notice__icon {
+    transform-origin: center;
+    transform-box: fill-box;
+    animation: gapt-icon-shake 3.6s linear infinite;
+  }
+
+  .gapt-badge[data-kind="ok"] .gapt-badge__check {
+    animation: gapt-check-draw 3.6s cubic-bezier(0.23, 1, 0.32, 1) infinite;
+  }
+}
+
+@keyframes gapt-icon-shake {
+  0%, 10%, 100% { transform: rotate(0); }
+  2%, 6% { transform: rotate(-6deg); }
+  4%, 8% { transform: rotate(6deg); }
+}
+
+@keyframes gapt-check-draw {
+  0%, 10% { stroke-dashoffset: 1; }
+  24%, 100% { stroke-dashoffset: 0; }
+}
