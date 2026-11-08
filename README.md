@@ -14,10 +14,8 @@ A Chrome extension and a local macOS console for Google AI Pro account workflows
 
 The two tools run independently, each in its own directory.
 
-| Version               | Where it runs                          | Open                            |
-| --------------------- | -------------------------------------- | ------------------------------- |
-| **Browser extension** | Google Chrome                          | [Extension files](./extension/) |
-| **Batch console**     | macOS 12+ with Chrome and Python 3.10+ | [Batch files](./batch/)         |
+- **Browser extension** runs in Google Chrome. [Extension files](./extension/)
+- **Batch console** runs on macOS 12+ with Chrome and Python 3.10+. [Batch files](./batch/)
 
 > [!CAUTION]
 > **Do not use your primary account.** The original source recommends using a secondary account.
@@ -31,28 +29,20 @@ The two tools run independently, each in its own directory.
 
 _Screenshots follow your device's light or dark theme._
 
-<table>
-  <tr>
-    <th>Offers</th>
-    <th>Instructions</th>
-  </tr>
-  <tr>
-    <td>
-      <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="./extension/docs/images/popup-offers-dark.png">
-        <source media="(prefers-color-scheme: light)" srcset="./extension/docs/images/popup-offers-light.png">
-        <img src="./extension/docs/images/popup-offers-light.png" alt="Extension Offers tab with offer layers, status, and sun/moon theme switch" width="370" height="560">
-      </picture>
-    </td>
-    <td>
-      <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="./extension/docs/images/popup-instructions-dark.png">
-        <source media="(prefers-color-scheme: light)" srcset="./extension/docs/images/popup-instructions-light.png">
-        <img src="./extension/docs/images/popup-instructions-light.png" alt="Extension Instructions tab with setup steps, click-to-copy ZIP code, and sun/moon theme switch" width="370" height="560">
-      </picture>
-    </td>
-  </tr>
-</table>
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./extension/docs/images/popup-offers-dark.png">
+    <source media="(prefers-color-scheme: light)" srcset="./extension/docs/images/popup-offers-light.png">
+    <img src="./extension/docs/images/popup-offers-light.png" alt="Extension Offers tab with offer layers, status, and sun/moon theme switch" width="49%">
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./extension/docs/images/popup-instructions-dark.png">
+    <source media="(prefers-color-scheme: light)" srcset="./extension/docs/images/popup-instructions-light.png">
+    <img src="./extension/docs/images/popup-instructions-light.png" alt="Extension Instructions tab with setup steps, click-to-copy ZIP code, and sun/moon theme switch" width="49%">
+  </picture>
+</p>
+
+<p align="center"><sub><b>Offers</b> (left) · <b>Instructions</b> (right)</sub></p>
 
 ### Install
 
@@ -62,11 +52,9 @@ _Screenshots follow your device's light or dark theme._
 
 ### Use the popup
 
-| Control          | What it does                                                                             |
-| ---------------- | ---------------------------------------------------------------------------------------- |
-| **Offers**       | Select an offer layer, then refresh the plans page.                                      |
-| **Instructions** | Read the steps and open the relevant Google pages. Click **97201** to copy the ZIP code. |
-| **Theme switch** | Toggle **Light / Dark**. Follows your system appearance until you save a preference.     |
+- **Offers:** select an offer layer, then refresh the plans page.
+- **Instructions:** read the steps and open the relevant Google pages. Click **97201** to copy the ZIP code.
+- **Theme switch:** toggle **Light / Dark**. Follows your system appearance until you save a preference.
 
 Open [Google One plans](https://one.google.com/plans) and confirm that you are signed in to the intended US account. The original workflow starts with **12 months**; check the notice at the top and the status badge in the lower-right corner.
 
@@ -85,7 +73,7 @@ _Screenshots follow your device's light or dark theme. All accounts and values s
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./batch/docs/images/console-overview-dark.png">
   <source media="(prefers-color-scheme: light)" srcset="./batch/docs/images/console-overview-light.png">
-  <img src="./batch/docs/images/console-overview-light.png" alt="Console overview with account totals, the five-step workflow, settings, and import panel" width="880" height="550">
+  <img src="./batch/docs/images/console-overview-light.png" alt="Console overview with account totals, the five-step workflow, settings, and import panel" width="100%">
 </picture>
 
 **Collapsed sidebar**
@@ -93,61 +81,46 @@ _Screenshots follow your device's light or dark theme. All accounts and values s
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./batch/docs/images/console-sidebar-collapsed-dark.png">
   <source media="(prefers-color-scheme: light)" srcset="./batch/docs/images/console-sidebar-collapsed-light.png">
-  <img src="./batch/docs/images/console-sidebar-collapsed-light.png" alt="Console with the sidebar collapsed to icons" width="880" height="550">
+  <img src="./batch/docs/images/console-sidebar-collapsed-light.png" alt="Console with the sidebar collapsed to icons" width="100%">
 </picture>
 
-<table>
-  <tr>
-    <th>Global settings</th>
-    <th>Import accounts</th>
-  </tr>
-  <tr>
-    <td>
-      <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="./batch/docs/images/console-settings-filled-dark.png">
-        <source media="(prefers-color-scheme: light)" srcset="./batch/docs/images/console-settings-filled-light.png">
-        <img src="./batch/docs/images/console-settings-filled-light.png" alt="Global settings with a test card, billing address, and a passing proxy check" width="560" height="679">
-      </picture>
-    </td>
-    <td>
-      <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="./batch/docs/images/console-import-dark.png">
-        <source media="(prefers-color-scheme: light)" srcset="./batch/docs/images/console-import-light.png">
-        <img src="./batch/docs/images/console-import-light.png" alt="Import accounts panel with three pasted demo accounts" width="280" height="679">
-      </picture>
-    </td>
-  </tr>
-</table>
+**Global settings and Import accounts**
 
-<table>
-  <tr>
-    <th>Target region</th>
-    <th>Plan</th>
-  </tr>
-  <tr>
-    <td>
-      <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="./batch/docs/images/console-region-menu-dark.png">
-        <source media="(prefers-color-scheme: light)" srcset="./batch/docs/images/console-region-menu-light.png">
-        <img src="./batch/docs/images/console-region-menu-light.png" alt="Target region menu" width="420" height="57">
-      </picture>
-    </td>
-    <td>
-      <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="./batch/docs/images/console-plan-menu-dark.png">
-        <source media="(prefers-color-scheme: light)" srcset="./batch/docs/images/console-plan-menu-light.png">
-        <img src="./batch/docs/images/console-plan-menu-light.png" alt="Plan menu" width="420" height="57">
-      </picture>
-    </td>
-  </tr>
-</table>
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./batch/docs/images/console-settings-filled-dark.png">
+    <source media="(prefers-color-scheme: light)" srcset="./batch/docs/images/console-settings-filled-light.png">
+    <img src="./batch/docs/images/console-settings-filled-light.png" alt="Global settings with a test card, billing address, and a passing proxy check" width="65%">
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./batch/docs/images/console-import-dark.png">
+    <source media="(prefers-color-scheme: light)" srcset="./batch/docs/images/console-import-light.png">
+    <img src="./batch/docs/images/console-import-light.png" alt="Import accounts panel with three pasted demo accounts" width="32.5%">
+  </picture>
+</p>
+
+**Target region**
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./batch/docs/images/console-region-menu-dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="./batch/docs/images/console-region-menu-light.png">
+  <img src="./batch/docs/images/console-region-menu-light.png" alt="Target region menu" width="420">
+</picture>
+
+**Plan**
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./batch/docs/images/console-plan-menu-dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="./batch/docs/images/console-plan-menu-light.png">
+  <img src="./batch/docs/images/console-plan-menu-light.png" alt="Plan menu" width="420">
+</picture>
 
 **Account queue**
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./batch/docs/images/console-accounts-dark.png">
   <source media="(prefers-color-scheme: light)" srcset="./batch/docs/images/console-accounts-light.png">
-  <img src="./batch/docs/images/console-accounts-light.png" alt="Account queue showing completed, running, awaiting verification, error, and pending accounts" width="880" height="582">
+  <img src="./batch/docs/images/console-accounts-light.png" alt="Account queue showing completed, running, awaiting verification, error, and pending accounts" width="100%">
 </picture>
 
 **Batch starting step**
@@ -155,7 +128,7 @@ _Screenshots follow your device's light or dark theme. All accounts and values s
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./batch/docs/images/console-batch-step-menu-dark.png">
   <source media="(prefers-color-scheme: light)" srcset="./batch/docs/images/console-batch-step-menu-light.png">
-  <img src="./batch/docs/images/console-batch-step-menu-light.png" alt="Batch starting step menu listing steps 1 to 5" width="880" height="165">
+  <img src="./batch/docs/images/console-batch-step-menu-light.png" alt="Batch starting step menu listing steps 1 to 5" width="100%">
 </picture>
 
 **Per-account starting step**
@@ -163,7 +136,7 @@ _Screenshots follow your device's light or dark theme. All accounts and values s
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./batch/docs/images/console-row-step-menu-dark.png">
   <source media="(prefers-color-scheme: light)" srcset="./batch/docs/images/console-row-step-menu-light.png">
-  <img src="./batch/docs/images/console-row-step-menu-light.png" alt="Starting step menu opened on an account row" width="880" height="141">
+  <img src="./batch/docs/images/console-row-step-menu-light.png" alt="Starting step menu opened on an account row" width="100%">
 </picture>
 
 **Account actions**
@@ -171,7 +144,7 @@ _Screenshots follow your device's light or dark theme. All accounts and values s
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./batch/docs/images/console-row-menu-dark.png">
   <source media="(prefers-color-scheme: light)" srcset="./batch/docs/images/console-row-menu-light.png">
-  <img src="./batch/docs/images/console-row-menu-light.png" alt="Account actions menu with Open browser, Copy account, Reset to pending, and Remove account" width="880" height="201">
+  <img src="./batch/docs/images/console-row-menu-light.png" alt="Account actions menu with Open browser, Copy account, Reset to pending, and Remove account" width="100%">
 </picture>
 
 **Activity log**
@@ -179,24 +152,20 @@ _Screenshots follow your device's light or dark theme. All accounts and values s
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./batch/docs/images/console-logs-dark.png">
   <source media="(prefers-color-scheme: light)" srcset="./batch/docs/images/console-logs-light.png">
-  <img src="./batch/docs/images/console-logs-light.png" alt="Activity log with success, warning, and error lines" width="880" height="267">
+  <img src="./batch/docs/images/console-logs-light.png" alt="Activity log with success, warning, and error lines" width="100%">
 </picture>
 
 ### Requirements
 
-| Requirement | Details                                                                 |
-| ----------- | ----------------------------------------------------------------------- |
-| **System**  | macOS 12 or later; the batch console targets macOS only.                |
-| **Browser** | Google Chrome installed in its default location.                        |
-| **Python**  | Python 3.10 or later.                                                   |
-| **Network** | A US proxy on your machine, or a proxy template entered in the console. |
+- **System:** macOS 12 or later; the batch console targets macOS only.
+- **Browser:** Google Chrome installed in its default location.
+- **Python:** Python 3.10 or later.
+- **Network:** a US proxy on your machine, or a proxy template entered in the console.
 
 ### Start the console
 
-| When           | Launcher                                                                           |
-| -------------- | ---------------------------------------------------------------------------------- |
-| **First run**  | Double-click [`1_install_and_start.command`](./batch/1_install_and_start.command). |
-| **Later runs** | Double-click [`2_start_console.command`](./batch/2_start_console.command).         |
+- **First run:** double-click [`1_install_and_start.command`](./batch/1_install_and_start.command).
+- **Later runs:** double-click [`2_start_console.command`](./batch/2_start_console.command).
 
 The browser opens the console at **[127.0.0.1:8765](http://127.0.0.1:8765)**. You can also open the `batch` directory and run the same launchers there.
 
@@ -204,13 +173,11 @@ The browser opens the console at **[127.0.0.1:8765](http://127.0.0.1:8765)**. Yo
 
 In **Global settings**, enter your own international **Visa or Mastercard**, then click **Save settings**.
 
-| Field                | Expected value                                                              |
-| -------------------- | --------------------------------------------------------------------------- |
-| **Card number**      | 16 digits.                                                                  |
-| **Expiration date**  | Month and year, such as `08 / 29`.                                          |
-| **Security code**    | 3-digit CVC.                                                                |
-| **Cardholder**       | Name in English.                                                            |
-| **Billing ZIP code** | Preset to `97201`, Oregon, US; the original setup says no change is needed. |
+- **Card number:** 16 digits.
+- **Expiration date:** month and year, such as `08 / 29`.
+- **Security code:** 3-digit CVC.
+- **Cardholder:** name in English.
+- **Billing ZIP code:** preset to `97201`, Oregon, US; the original setup says no change is needed.
 
 > [!NOTE]
 > The script contains a **US$0.00 checkout guard** and is intended to click Subscribe only when the checkout dialog confirms that amount. This does **not** guarantee that no charges will occur; actual charges and benefits depend on checkout and upstream results.
@@ -231,13 +198,11 @@ Click **Import accounts**, then choose the starting step in the account queue.
 
 Click **Start** next to an account, or **Run batch** to process the queue. Use the **⋯** menu on a row to open its browser, copy the account, reset it to pending, or remove it.
 
-| Step                     | Workflow                                                                                                                                                         |
-| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **01 · Sign in**         | Sign in to Google and complete recovery-email or 2FA verification.                                                                                               |
-| **02 · First 12 months** | Set up a card with inline tax exemption and apply the first package, targeting US$0.00.                                                                          |
-| **03 · Second 6 months** | Apply the next package, targeting US$0.00 and 18 months in total.                                                                                                |
-| **04 · Third 6 months**  | Apply the final package, targeting US$0.00 and a 24-month cap.                                                                                                   |
-| **05 · Cancel renewal**  | Open Google Play, cancel automatic renewal, and capture a verification screenshot. The workflow aims to preserve the two-year benefit and verify its expiration. |
+1. **Sign in.** Sign in to Google and complete recovery-email or 2FA verification.
+2. **First 12 months.** Set up a card with inline tax exemption and apply the first package, targeting US$0.00.
+3. **Second 6 months.** Apply the next package, targeting US$0.00 and 18 months in total.
+4. **Third 6 months.** Apply the final package, targeting US$0.00 and a 24-month cap.
+5. **Cancel renewal.** Open Google Play, cancel automatic renewal, and capture a verification screenshot. The workflow aims to preserve the two-year benefit and verify its expiration.
 
 ## Local data
 
@@ -291,10 +256,10 @@ The post says to change the **Play Store payment method**, and says this is unre
 
 ```text
 google-pro-helper/
-├── extension/          # Chrome extension, popup, scripts, icons, and fonts
-│   └── docs/images/    # Light and dark extension screenshots
-├── batch/              # Local console, backend, launchers, and tests
-│   └── docs/images/    # Light and dark console screenshots
+├── extension/        # Chrome extension
+│   └── docs/images/  # Screenshots
+├── batch/            # macOS batch console
+│   └── docs/images/  # Screenshots
 ├── .gitignore
 └── README.md
 ```
