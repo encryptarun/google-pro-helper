@@ -68,7 +68,7 @@ _Google AI Pro · 5 TB · stated goal: US$0.00 → 24 months_
 
 _Screenshots follow your device's light or dark theme. All accounts and values shown are demo data._
 
-**Overview**
+#### Overview
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./batch/docs/images/console-overview-dark.png">
@@ -76,7 +76,7 @@ _Screenshots follow your device's light or dark theme. All accounts and values s
   <img src="./batch/docs/images/console-overview-light.png" alt="Console overview with account totals, the five-step workflow, settings, and import panel" width="100%">
 </picture>
 
-**Collapsed sidebar**
+#### Collapsed sidebar
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./batch/docs/images/console-sidebar-collapsed-dark.png">
@@ -84,7 +84,7 @@ _Screenshots follow your device's light or dark theme. All accounts and values s
   <img src="./batch/docs/images/console-sidebar-collapsed-light.png" alt="Console with the sidebar collapsed to icons" width="100%">
 </picture>
 
-**Global settings and Import accounts**
+#### Global settings and Import accounts
 
 <p align="center">
   <picture>
@@ -99,7 +99,7 @@ _Screenshots follow your device's light or dark theme. All accounts and values s
   </picture>
 </p>
 
-**Target region**
+#### Target region
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./batch/docs/images/console-region-menu-dark.png">
@@ -107,7 +107,7 @@ _Screenshots follow your device's light or dark theme. All accounts and values s
   <img src="./batch/docs/images/console-region-menu-light.png" alt="Target region menu" width="420">
 </picture>
 
-**Plan**
+#### Plan
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./batch/docs/images/console-plan-menu-dark.png">
@@ -115,7 +115,7 @@ _Screenshots follow your device's light or dark theme. All accounts and values s
   <img src="./batch/docs/images/console-plan-menu-light.png" alt="Plan menu" width="420">
 </picture>
 
-**Account queue**
+#### Account queue
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./batch/docs/images/console-accounts-dark.png">
@@ -123,7 +123,7 @@ _Screenshots follow your device's light or dark theme. All accounts and values s
   <img src="./batch/docs/images/console-accounts-light.png" alt="Account queue showing completed, running, awaiting verification, error, and pending accounts" width="100%">
 </picture>
 
-**Batch starting step**
+#### Batch starting step
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./batch/docs/images/console-batch-step-menu-dark.png">
@@ -131,7 +131,7 @@ _Screenshots follow your device's light or dark theme. All accounts and values s
   <img src="./batch/docs/images/console-batch-step-menu-light.png" alt="Batch starting step menu listing steps 1 to 5" width="100%">
 </picture>
 
-**Per-account starting step**
+#### Per-account starting step
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./batch/docs/images/console-row-step-menu-dark.png">
@@ -139,7 +139,7 @@ _Screenshots follow your device's light or dark theme. All accounts and values s
   <img src="./batch/docs/images/console-row-step-menu-light.png" alt="Starting step menu opened on an account row" width="100%">
 </picture>
 
-**Account actions**
+#### Account actions
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./batch/docs/images/console-row-menu-dark.png">
@@ -147,7 +147,7 @@ _Screenshots follow your device's light or dark theme. All accounts and values s
   <img src="./batch/docs/images/console-row-menu-light.png" alt="Account actions menu with Open browser, Copy account, Reset to pending, and Remove account" width="100%">
 </picture>
 
-**Activity log**
+#### Activity log
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./batch/docs/images/console-logs-dark.png">
