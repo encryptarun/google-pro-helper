@@ -104,7 +104,7 @@ _Screenshots follow your device's light or dark theme. All accounts and values s
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./batch/docs/images/console-region-menu-dark.png">
   <source media="(prefers-color-scheme: light)" srcset="./batch/docs/images/console-region-menu-light.png">
-  <img src="./batch/docs/images/console-region-menu-light.png" alt="Target region menu" width="420">
+  <img src="./batch/docs/images/console-region-menu-light.png" alt="Target region menu" width="100%">
 </picture>
 
 #### Plan
@@ -112,7 +112,7 @@ _Screenshots follow your device's light or dark theme. All accounts and values s
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./batch/docs/images/console-plan-menu-dark.png">
   <source media="(prefers-color-scheme: light)" srcset="./batch/docs/images/console-plan-menu-light.png">
-  <img src="./batch/docs/images/console-plan-menu-light.png" alt="Plan menu" width="420">
+  <img src="./batch/docs/images/console-plan-menu-light.png" alt="Plan menu" width="100%">
 </picture>
 
 #### Account queue
