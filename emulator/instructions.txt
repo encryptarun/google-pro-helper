@@ -1,0 +1,99 @@
+Google AI Pro setup and trial extension (BlueStacks Air on macOS)
+==================================================
+
+SUPPORTED PLAN
+  Google AI Pro (5 TB) only:
+    Step 1: 12-month free trial
+    Step 2: Add 6 months
+    Step 3: Add another 6 months (24 months total)
+    Extra: Add another 6 months (up to 30 months total)
+
+SET UP THE ENVIRONMENT (ONCE)
+  Double-click setup_environment.command. It will:
+    1. Check Python (3.10 or later).
+    2. Match the Mac Frida client to the MagiskFrida server and install the Java bridge.
+    3. Use BlueStacks Air ADB at /Applications/BlueStacks.app/Contents/MacOS/hd-adb.
+    4. Connect to BlueStacks Air and check root, Frida, and Play Store access.
+  Continue when you see "Environment check passed."
+
+BEFORE YOU START
+  1. BlueStacks Air is running with ADB access and root enabled.
+     The target Google account is signed in. Stock installations may need
+     separate root setup; this project does not modify BlueStacks itself.
+  2. The account has a payment method (card).
+  3. The account has no existing Google One subscription.
+  4. Play Store opens normally. Restart the emulator if it does not.
+
+DOUBLE-CLICK IN THIS ORDER
+  0_environment_check.command          Check everything first.
+  1_list_offers.command                View free offers for the current account;
+                                   this does not start a purchase.
+
+  2_pro_12_months_step_1.command       First purchase: 12 months free.
+  3_pro_add_6_months_step_2.command    Second purchase: +6 months (18 total).
+  4_pro_add_6_months_step_3.command    Third purchase: +6 months (24 total).
+  5_pro_extra_6_months.command         Optional, after the first three succeed.
+
+HOW THE EXTENSION WORKS
+  A regular purchase replaces the same plan without extending its end date.
+  The Play subscription upgrade flow is required:
+
+    1. Read the current subscription's purchaseToken from Play's library.db.
+       The script does this automatically; you do not need to enter the token.
+    2. Set BillingFlowParams.SubscriptionUpdateParams:
+         .setOldPurchaseToken(existing token)
+         .setReplaceProrationMode(5)      // CHARGE_FULL_PRICE
+    3. Open checkout again.
+
+  A successful extension can look like this at checkout:
+
+    Upcoming charge today: JP¥0
+    546 days (including 364 days prorated from your current plan)
+    Start date: May 18, 2028
+    JP¥2,900/month
+    Your first charge will be on May 18, 2028.
+
+  If the start date is the current expiry date and a charge is due that day,
+  the upgrade flow was not used. Check that the subscription is active and
+  that the command includes --stack.
+
+  Manual commands (equivalent to the .command launchers):
+    .venv/bin/python pro.py --account "current@device" --no-add --force --plan pro12
+    .venv/bin/python pro.py --account "current@device" --no-add --force --stack --plan pro6
+    .venv/bin/python pro.py --account "current@device" --no-add --force --stack --plan pro6b
+    .venv/bin/python pro.py --account "current@device" --no-add --force --stack --plan pro6c
+
+SUBSCRIPTION STATUS AND EXTENSIONS
+  The subscription must be active, with auto-renewal on, to extend it.
+  If it has been canceled (Play shows "Canceled" or "Resubscribe"), a new
+  purchase may become a paid plan after expiry instead of adding trial time.
+  Check that it is active, apply all extensions, then cancel it.
+  Canceling does not end the benefits before the expiry date.
+
+VERIFY AFTER EACH STEP
+  Open play.google.com/store/account/subscriptions and check the next payment date:
+    After step 1: about 12 months away
+    After step 2: about 18 months away
+    After step 3: about 24 months away
+  Continue only if the date moves later. Stop if it does not.
+
+TROUBLESHOOTING
+  Stuck on "connecting"
+    Play Store is not running. The script tries to start it; if that fails,
+    open Play Store manually or restart the emulator.
+  "You are already subscribed"
+    This account already has that plan and cannot purchase it again.
+  "No internet connection"
+    The emulator briefly lost its connection. Wait a few seconds and retry;
+    restart the emulator if it happens repeatedly.
+  "Invalid signature"
+    Web checkout does not accept the Android token. Use this script's
+    Android Billing checkout flow.
+  Price is not zero, or the date did not move later
+    Do not confirm the purchase. Close checkout and check the subscription
+    status and --stack option.
+
+NOTES
+  Repeated failures may trigger risk checks. Wait 24 hours before retrying.
+  Cancel before expiry to avoid a JP¥2,900 monthly charge.
+  Consider using a low-limit card in case you forget to cancel.
