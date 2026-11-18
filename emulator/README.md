@@ -4,7 +4,7 @@
 
 Run the Google AI Pro (5 TB) offer workflow in BlueStacks Air on a Mac.
 
-**[Requirements](#requirements)** · **[First run](#first-run)** · **[Run the steps](#run-the-steps)** · **[Troubleshooting](#troubleshooting)**
+**[Requirements](#requirements)** · **[Root and Frida setup](#root-bluestacks-air-and-install-frida)** · **[First run](#first-run)** · **[Run the steps](#run-the-steps)** · **[Troubleshooting](#troubleshooting)**
 
 </div>
 
@@ -15,9 +15,32 @@ Run the Google AI Pro (5 TB) offer workflow in BlueStacks Air on a Mac.
 
 - **Mac:** Python 3.10 or later and Node.js with npm.
 - **Emulator:** BlueStacks Air installed at `/Applications/BlueStacks.app` and running.
-- **Android access:** ADB connected to BlueStacks Air, root access through Magisk, and the MagiskFrida module running. The setup checks these. It matches the Mac Frida client to the module's server version.
+- **Android access:** ADB connected to BlueStacks Air, root access through Kitsune Magisk, and the MagiskFrida module running. The setup checks these. It matches the Mac Frida client to the module's server version.
 - **Apps:** Google One and Google Play Store installed in BlueStacks Air. Sign in to the intended Google account and add a payment method before checkout.
 - **Subscription:** Start with step 1 on an account without this Pro subscription. Steps 2–4 need the earlier Pro subscription to be active with renewal enabled. Check this in Play Store before each extension.
+
+## Root BlueStacks Air and install Frida
+
+Skip this section if Kitsune Magisk already grants root in BlueStacks Air and MagiskFrida is running. The rooting steps below follow the [root-bluestacks-air project](https://github.com/hanreev/root-bluestacks-air). Its tested Kitsune build is `v27.2-kitsune-4`. Use the [Kitsune Magisk backup releases](https://github.com/AndnixSH/KitsuneMagisk/releases) to get that APK because the download link in the root guide has expired.
+
+1. Install BlueStacks Air. **Open it once**, then quit it completely before changing its files.
+2. Download or clone `root-bluestacks-air` to your Mac. Download the Kitsune Magisk APK from the backup releases. Put the APK in the `root-bluestacks-air` folder and rename it exactly `magisk.apk`.
+3. Open Terminal, type `cd `, drag the extracted `root-bluestacks-air` folder into Terminal, and press Enter. Generate a patched BlueStacks startup image and a backup of the original.
+
+   ```bash
+   bash root.sh -o files/initrd_hvf.img -b files/backup
+   ```
+
+4. Copy the patched image into the BlueStacks Air app. macOS may ask for your administrator password. Keep the `files/backup` folder so you can restore the original image if needed.
+
+   ```bash
+   sudo cp files/initrd_hvf.img /Applications/BlueStacks.app/Contents/img/initrd_hvf.img
+   ```
+5. Start BlueStacks Air. Install `magisk.apk` in the emulator. Open Kitsune Magisk and accept its **Requires Additional Setup** prompt. Let BlueStacks Air reboot, or reopen it if it quits.
+6. Download `MagiskFrida.zip` from the [ViRb3 MagiskFrida releases](https://github.com/ViRb3/magisk-frida/releases). In Kitsune Magisk, open **Modules → Install from storage**, select the ZIP, and reboot BlueStacks Air. MagiskFrida starts `frida-server` on boot.
+7. Run `setup_environment.command` below. It checks root and Frida, then installs a Mac Frida client matching the server version inside BlueStacks Air.
+
+The root project's [README](https://github.com/hanreev/root-bluestacks-air#unrooting) explains how to restore the backed-up image. [MagiskFrida's README](https://github.com/ViRb3/magisk-frida#instructions) has the module installation and troubleshooting details.
 
 ## First run
 
