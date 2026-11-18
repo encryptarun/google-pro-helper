@@ -4,18 +4,17 @@
 
 # Google Pro Helper
 
-A Chrome extension and a local macOS console for Google AI Pro account workflows.
+A macOS and BlueStacks Air helper for Google AI Pro account workflows.
 
-**[Extension](#browser-extension)** · **[Batch console](#batch-console)** · **[Local data](#local-data)** · **[Source notes](#source-notes)**
+**[Emulator helper](#emulator-helper)** · **[Legacy tools](#legacy-tools)** · **[Local data](#local-data)**
 
 </div>
 
-## Choose your version
+## Emulator helper
 
-The two tools run independently, each in its own directory.
+**Use the [emulator version](./emulator/README.md).** It runs on macOS with BlueStacks Air, Magisk root, and MagiskFrida. The emulator README has the prerequisites, setup instructions, numbered launchers, and checkout steps.
 
-- **Browser extension** runs in Google Chrome. [Extension files](./extension/)
-- **Batch console** runs on macOS 12+ with Chrome and Python 3.10+. [Batch files](./batch/)
+Start BlueStacks Air, then open the [`emulator`](./emulator/) directory and double-click [`setup_environment.command`](./emulator/setup_environment.command). Setup checks the device connection and installs the matching Frida client. Follow the numbered `.command` launchers in the [emulator guide](./emulator/README.md#run-the-steps).
 
 > [!CAUTION]
 > **Do not use your primary account.** The original source recommends using a secondary account.
@@ -23,7 +22,14 @@ The two tools run independently, each in its own directory.
 > [!IMPORTANT]
 > **“Two-year zero-cost” is the project's stated goal, not a verified result.** Free access, benefits, and actual charges depend on Google checkout and upstream results. Check the amount before confirming a subscription.
 
+## Legacy tools
+
+The Chrome extension and batch console are **deprecated**. Their files and notes remain in this repository for reference. Use the emulator helper for current workflows.
+
 ## Browser extension
+
+> [!WARNING]
+> Deprecated. Use the [emulator helper](./emulator/README.md).
 
 ### A look inside
 
@@ -61,6 +67,9 @@ Open [Google One plans](https://one.google.com/plans) and confirm that you are s
 The source describes adding a payment card, applying further six-month layers, and cancelling automatic renewal. Its original steps, billing caveats, and community reports are preserved under [Source notes](#source-notes).
 
 ## Batch console
+
+> [!WARNING]
+> Deprecated. Use the [emulator helper](./emulator/README.md).
 
 _Google AI Pro · 5 TB · stated goal: US$0.00 → 24 months_
 
@@ -206,12 +215,12 @@ Click **Start** next to an account, or **Run batch** to process the queue. Use t
 
 ## Local data
 
-The first-run batch launcher creates a local **`.venv`**. Each account uses a separate browser profile directory. These are separate directories, _not a virtual machine or a security sandbox_.
+The emulator setup creates local **`.venv`** and **`.frida-bridge`** directories. Emulator run results stay in **`emulator/pro-report/`**. These paths are ignored by Git.
 
 > [!WARNING]
 > **Keep sensitive data out of Git.** Account passwords, 2FA secrets, payment-card details, and browser login data are sensitive. Do not commit local configuration, browser profiles, screenshots, logs, or caches.
 
-Local account and payment configuration (`config*.json`), environment files, caches, and runtime data are not committed to this repository. Enter batch configuration locally.
+Local account and payment configuration (`config*.json`), environment files, caches, and runtime data are not committed to this repository.
 
 ## Source notes
 
@@ -256,6 +265,7 @@ The post says to change the **Play Store payment method**, and says this is unre
 
 ```text
 google-pro-helper/
+├── emulator/         # Current macOS and BlueStacks Air helper
 ├── extension/        # Chrome extension
 │   └── docs/images/  # Screenshots
 ├── batch/            # macOS batch console
